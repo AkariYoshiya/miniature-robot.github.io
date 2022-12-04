@@ -1,0 +1,185 @@
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+/*I'm going to note down notes my mistakes, questions and realizations for my future.*/
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none; /*なに*/
+}
+
+header {
+  width: 100%; /*100?*/
+  height: 65px;
+  background-color: rgba(34, 49, 52, 0.9);/*opacityだと要素の中身全てが透明になってしまう。ここでは背景色だけを透明にしたい。*/
+  position: fixed; /*常に要素を画面の指定した位置に固定できる*/
+  top: 0;
+  z-index: 10; 
+}
+
+.header-left {
+  float: left;
+}
+
+.header-logo {
+  width: 124px;
+  margin-top: 24px;
+}
+
+.header-right {
+  float: right;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s; /*It adds animation effects. all means I can apply to everything.*/
+}
+
+.header-right a {
+  margin: 0 25px;
+  line-height: 65px; /*行の高さ。要素の高さと同じにすると要素の縦方向の中央に文字を配置できる*/
+  color: white;
+}
+
+.header-right:hover {
+  background-color:rgba(255, 255, 255, 0.5);
+}
+.top-wrapper {
+    padding: 180px 0 100px 0;
+    background-image: url(https://prog-8.com/images/html/advanced/top.png);
+    background-size: cover;
+    color: white;
+    text-align: center; 
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto; /*中央寄せ。auto指定時は必ずwidth指定。上下にautoは不可。*/
+}
+
+.container h1{
+  font-size:45px;
+  letter-spacing:5px;
+  opacity:0.7;
+}
+
+.container p {
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+.btn-signup { /*全てのbtnの共通項を整える前に個後に先に色をつけてボタンの枠組みを可視化する*/
+  background-color: #239b76; 
+  margin-top: 15px; /*Since there is a display in .btn css, margin-top is reflected here.*/
+  margin-bottom: 15px;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  margin-right: 5px;
+}
+
+.btn-twitter {
+  background-color: #55acee;
+}
+
+.btn {
+  border-radius: 4px;
+  opacity: 0.8;
+  padding: 8px 24px;
+  color: white;
+  display: inline-block; /*<a>などインライン要素にはwidth/hight,上下のmargin指定できない*/
+}
+
+.btn:hover { /*hoverはカーソルが乗った時のCSS指定*/
+  opacity: 1;
+}
+
+.fa {
+  margin-right: 5px;
+}
+
+.lesson-wrapper {
+  text-align: center; 
+  height: 580px;
+  background-color:#f7f7f7;
+}
+
+.heading {
+  color: #5f5d60;
+  padding: 80px 0 50px 0;
+}
+
+.heading h2 {
+  font-weight: normal; /*文字の太さ<h1>~<h6>の要素は初期状態でboldになってる*/
+}
+
+.lesson {
+  float: left;
+  width: 25%; /*４つが入るように幅調整しないとfloat leftにしても全てが横並びに収まりきらない*/
+}
+
+.lesson-icon {
+  position: relative; /*relative;はabsoluteの基準位置を決めるために使う*/
+}
+
+.lesson-icon p {
+  position: absolute;
+  top: 90px;
+  width: 100%; /*画面幅によって全体のwidthが変わるように100%にしてる?*/
+  color: white;
+}
+
+.text-contents {
+  width: 80%; /*80% is for "lesson" of parent element?*/
+  font-size: 13px;
+  display: inline-block;
+  margin-top: 15px;
+  color: #b3aeb5;
+}
+
+.message-wrapper {
+  text-align: center;
+  margin: 80px 0px; /*containerで既にautoにしてるから左右は０？*/
+}
+
+.message-wrapper h2, h3 {
+  color:#5f5d60;
+}
+
+.btn-message { /*クリックするとなぜかトップに戻ってしまう*/
+  background-color:#5dca88;
+  margin-top:50px;
+  padding:15px 40px;
+  box-shadow:0 7px #1a7940; /*水平方向０、垂直方向7px*/
+}
+
+.btn-message:active { /*要素がクリックされてる間だけcssを適用*/
+  position: relative; /*relativeをtopやleftと併用するとその要素を本来の位置からずらせる*/
+  top: 7px;
+  box-shadow: none;
+}
+
+footer{
+  padding: 30px 0;
+  border-top: 1px solid #eee;
+  width: 1170px; 
+  margin:0 auto;
+}
+
+.footer-logo {
+  width: 124px;
+}
+
+footer p { /*Do not add period before tag except class name.*/
+  color: #b3aeb5;
+  font-size: 12px;
+}
